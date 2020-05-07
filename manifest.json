@@ -1,0 +1,18 @@
+{
+    "name": "LiveData",
+    "version": "1.0",
+    "manifest_version": 2,
+    "content_scripts": [
+      {
+        "matches": ["https://au.finance.yahoo.com/quote/AUDUSD=X?p=AUDUSD=X","http://localhost/*"],
+        "js": ["content.js","jquery-3.2.1.js"]
+      }
+    ],
+    "browser_action": {
+      "default_title": "LiveData"
+    },
+    "background": {
+      "scripts": ["background.js"]
+    },
+    "permissions": ["tabs","http://localhost/*"]
+  }
