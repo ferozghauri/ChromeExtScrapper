@@ -35,14 +35,14 @@
 
 setInterval(() => {
 
-  var data;
+  var value;
   var a = document.getElementsByClassName('Fw(b)')
   
   for (let item of a)  
   { if(item.getAttribute('data-reactid') == 32 && item.tagName.toLowerCase() == 'span') 
     { 
       //alert(item.innerHTML)
-      data = item.innerHTML } 
+      value = item.innerHTML } 
   }
     
   var today = new Date();
@@ -51,10 +51,19 @@ setInterval(() => {
   
   chrome.runtime.sendMessage({
     //url: window.location.href,
-    url: time,
-    content: data
+    time: time,
+    value: value
     
   })
+
+
+    var req = new XMLHttpRequest();
+
+    req.open('POST', 'http://localhost:8080/chromext/insertdb.php', true);
+    req.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    req.send("url="+encodeURIComponent(time)+"&content="+encodeURIComponent(value));
+
+
 }, 3000);
 
 
