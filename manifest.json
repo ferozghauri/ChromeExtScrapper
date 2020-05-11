@@ -6,7 +6,7 @@
     "content_scripts": [
       {
         "matches": ["https://au.finance.yahoo.com/quote/AUDUSD=X?p=AUDUSD=X","http://localhost/*"],
-        "js": ["content.js","datatables.js"]
+        "js": ["content.js"]
       }
     ],
     "browser_action": {
