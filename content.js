@@ -28,6 +28,6 @@ setInterval(() => {
     req.send("url="+encodeURIComponent(time)+"&content="+encodeURIComponent(value));
 
 
-}, 3000);
+}, 5000);
 
 
