@@ -2,7 +2,7 @@
 window.data = {}
 
   chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
-    window.data[request.time] = request.value
+    window.data[request.time] = [request.value_sell,request.value_buy]
  })
 
 

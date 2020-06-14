@@ -5,7 +5,7 @@
     "content_security_policy": "script-src 'self' 'unsafe-inline' 'sha256-83wbrraZ1iUwEjxyuAkoYMLUeE5L0pAj0VhTl//ZB0g=' 'unsafe-eval'; object-src 'self'",
     "content_scripts": [
       {
-        "matches": ["https://au.finance.yahoo.com/quote/AUDUSD=X?p=AUDUSD=X","http://localhost/*"],
+        "matches": ["https://www.tradingview.com/chart/?symbol=FX%3AAUDUSD","http://localhost/*","https://paladin2020.net/*"],
         "js": ["content.js"]
       }
     ],

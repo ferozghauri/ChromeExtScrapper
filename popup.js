@@ -10,20 +10,30 @@ document.addEventListener('DOMContentLoaded', function () {
   button.type="button";
   button.className="btn btn-primary";
   document.getElementById("content_container").appendChild(button)
+
+  //get background object
   const bg = chrome.extension.getBackgroundPage()
 
   Object.keys(bg.data).forEach(function (url) {
 
     const tr = document.createElement('tr');
+
     const date_value = document.createElement('td');
     date_value.textContent = dd+ '-' + mm+ '-' + yyyy;
     tr.appendChild(date_value);
+
     const time_value = document.createElement('td');
     time_value.textContent=`${url}`;
     tr.appendChild(time_value);
-    const value_value = document.createElement('td');
-    value_value.textContent=`${bg.data[url]}`;
-    tr.appendChild(value_value);
+
+    const value_value_sell = document.createElement('td');
+    value_value_sell.textContent=`${bg.data[url][0]}`;
+    tr.appendChild(value_value_sell);
+
+    const value_value_buy = document.createElement('td');
+    value_value_buy.textContent=`${bg.data[url][1]}`;
+    tr.appendChild(value_value_buy);
+
     document.getElementById("table_body").appendChild(tr);
 
   })
